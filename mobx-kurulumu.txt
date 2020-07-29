@@ -1,0 +1,28 @@
+npm install mobx
+npm install mobx-react
+npm install --save-dev @babel/plugin-proposal-decorators
+vs code kullanıyorsan tsconfig.json dosyası oluştur ve içerisine aşağıdaki kodları yapıştır
+
+{
+  "compilerOptions": {
+   "experimentalDecorators": true,
+    "allowJs": true  
+  }
+}
+
+babel.config.js dosyasını aşağıdaki kodlarla değiştir
+
+module.exports = {
+
+  presets: ['module:metro-react-native-babel-preset'],
+  
+  plugins: [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ]
+  
+}
